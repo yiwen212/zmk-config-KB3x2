@@ -1,0 +1,2 @@
+config SHIELD_KB3X2
+    def_bool $(shields_list_contains, KB3x2)
