@@ -14,8 +14,8 @@
 // | Ctrl+C    | Ctrl+V      | Ctrl+Z     |
 
             bindings = <
-                &bt BT_CLR   &kp LG(LS(S))  &to 1
-                &kp LC(C)    &kp LC(V)      &kp LC(Z) 
+                &bt BT_DISC   &kp LG(LS(S))  &to 1
+                &kp LC(C)     &kp LC(V)      &kp LC(Z) 
             >;
         };
 
