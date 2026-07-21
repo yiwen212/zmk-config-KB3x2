@@ -14,20 +14,20 @@
 // | Ctrl+C    | Ctrl+V      | Ctrl+Z     |
 
             bindings = <
-                &bt BT_DISC   &kp LG(LS(S))  &to 1
+                &bt BT_CLR    &bt BT_SEL 1   &to 1
                 &kp LC(C)     &kp LC(V)      &kp LC(Z) 
             >;
         };
 
-        abc { // Layer 1
+        wasd { // Layer 1
             display-name = "WASD";
 // ----------------------------------------------
 // | Esc  | Up   | 切換 Layer 0 |
 // | Left | Down | Right        |
 
             bindings = <
-                &kp ESC     &kp UP      &to 0
-                &kp LEFT    &kp DOWN    &kp RIGHT
+                &kp ESC     &kp W      &to 0
+                &kp A       &kp S      &kp D
             >;
         };
     };
