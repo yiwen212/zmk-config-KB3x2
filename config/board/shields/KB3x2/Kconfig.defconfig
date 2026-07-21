@@ -1,6 +1,6 @@
 if SHIELD_KB3X2
 
 config ZMK_KEYBOARD_NAME
-    default "KB3x2"
+    default "KB3X2"
 
 endif
