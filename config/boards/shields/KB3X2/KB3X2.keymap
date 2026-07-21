@@ -14,7 +14,7 @@
 // | Ctrl+C    | Ctrl+V      | Ctrl+Z     |
 
             bindings = <
-                &bt BT_CLR   &kp A  &to 1
+                &bt BT_CLR   &kp LG(LS(S))  &to 1
                 &kp LC(C)    &kp LC(V)      &kp LC(Z) 
             >;
         };
@@ -26,7 +26,7 @@
 // | Left | Down | Right        |
 
             bindings = <
-                &kp ESC     &kp B      &to 0
+                &kp ESC     &kp UP      &to 0
                 &kp LEFT    &kp DOWN    &kp RIGHT
             >;
         };
