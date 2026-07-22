@@ -7,11 +7,13 @@
         bt_actions: bt_actions {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
-                &bt BT_DISC
-                &bt BT_SEL 0
-                &bt BT_CLR
-            >;
+            wait-ms = <100>;
+
+            bindings
+                = <&bt BT_DISC 0>
+                , <&bt BT_SEL 0>
+                , <&bt BT_CLR>
+                ;
         };
     };
 
