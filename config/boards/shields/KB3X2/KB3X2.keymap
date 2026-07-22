@@ -3,7 +3,18 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-    
+    macros {
+        bt_actions: bt_actions {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp Z &kp M &kp K>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
         
@@ -14,7 +25,7 @@
 // | Ctrl+C    | Ctrl+V      | Ctrl+Z     |
 
             bindings = <
-                &bt BT_CLR_ALL    &kp LG(LS(S))   &to 1
+                &bt BT_CLR_ALL    &kp bt_actions   &to 1
                 &kp LC(C)         &kp LC(V)       &kp LC(Z) 
             >;
         };
