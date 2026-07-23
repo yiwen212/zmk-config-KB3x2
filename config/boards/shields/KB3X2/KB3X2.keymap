@@ -17,18 +17,31 @@
         };
     };
 
+    behaviors {
+        bt_holdtap: bt_holdtap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+
+            flavor = "tap-preferred";
+            tapping-term-ms = <500>;
+            quick-tap-ms = <175>;
+
+            bindings = <&bt_actions>, <&kp>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
         
         default_layer{
             display-name = "Base";
 // ----------------------------------------------
-// | 清除BT配對 | Windows截圖 | 切換 Layer 1 |
-// | Ctrl+C    | Ctrl+V      | Ctrl+Z     |
+// | 清除BT配對 & Windows截圖 | Ctrl+S      | 切換 Layer 1 |
+// | Ctrl+C                  | Ctrl+V      | Ctrl+Z       |
 
             bindings = <
-                &bt BT_CLR_ALL    &bt_actions     &to 1
-                &kp LC(C)         &kp LC(V)       &kp LC(Z) 
+                &bt_holdtap 0 LG(LS(S))    &kp LC(S)     &to 1
+                &kp LC(C)                  &kp LC(V)     &kp LC(Z) 
             >;
         };
 
