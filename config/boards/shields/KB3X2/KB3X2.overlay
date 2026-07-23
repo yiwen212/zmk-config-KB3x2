@@ -1,14 +1,15 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <physical_layouts.dtsi>
+
 
  / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,matrix-transform = &transform0;
+        zmk,physical-layout = &physical_layout0;
     };
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
-        label = "kscan0";
         diode-direction = "col2row";   // 1 = COL2ROW, 0 = ROW2COL
 
         row-gpios = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
@@ -27,6 +28,23 @@
         map = <
             RC(0,0)  RC(0,1)  RC(0,2)
             RC(1,0)  RC(1,1)  RC(1,2)
+        >;
+    };
+
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "KB3X2";
+
+        transform = <&transform0>;
+
+        keys = <
+            &key_physical_attrs 100 100   0   0 0 0 0
+            &key_physical_attrs 100 100 100   0 0 0 0
+            &key_physical_attrs 100 100 200   0 0 0 0
+
+            &key_physical_attrs 100 100   0 100 0 0 0
+            &key_physical_attrs 100 100 100 100 0 0 0
+            &key_physical_attrs 100 100 200 100 0 0 0
         >;
     };
 };
